@@ -1,0 +1,7 @@
+use  SchoolLibrary
+SchoolLibrary> db.Books.insert({
+    "title": "Introduction to Science",
+    "author": "Dr. Smith",
+    "available": true})
+SchoolLibrary> db.Books.drop()
+SchoolLibrary> db.dropDatabase()
