@@ -1,0 +1,46 @@
+use CompanyDB
+var cont1={"email":"ravi@example.com","phone":"9876543210"}
+var skill1 =["JavaScript", "Node.js", "MongoDB"]
+
+db.Employees.insertOne(
+    {name: "Ravi Kumar",
+    age: 28,
+    isActive: true,
+    salary: 45000.50,
+    "skills": skills,
+    "contact":cont1,
+    "joined Date": new Date(),
+    "managerAssigned": null})
+
+var cont2={"email": "anita@example.com","phone": "9123456780"}
+var skill2=["Python", "Django", "PostgreSQL"]
+var cont3 ={"email": "karan@example.com", "phone": "9988776655"}
+var skill3 =["React", "TypeScript", "Firebase"]
+var cont4={"email": "priya@example.com","phone":"9876501234"}
+var skill4 =["Java", "Spring Boot", "MySQL"]
+
+db.Employees.insertMany([
+    {name: "Anita Sharma", 
+    age: 32, 
+    isActive: true,
+    salary: 52000.75, 
+    "skills":skill2,
+    "contact":cont1,
+    joinedDate: new Date(),
+    managerAssigned: "Rajiv Menon"},
+    { name: "Karan Mehta",
+    age: 26,
+    isActive: false,
+    salary: 39000.00,
+    "skills":skill3,
+    "contact":cont3,
+    "joined Date":new Date(),
+    managerAssigned: null},
+    {name: "Priya Nair",
+    age: 30,
+    isActive: true,
+    salary: 61000.25,
+    "skills":skill4,
+    "contact":cont4,
+    joinedDate: new Date(),
+    managerAssigned: "Meena Joshi"}])

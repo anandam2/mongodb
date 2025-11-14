@@ -1,0 +1,36 @@
+use EventTracker
+var perform =["DJ Max", "Live Band"]
+var loctation={"city":"Chennai","venue":"Beach Arena"}
+
+db.UpcomingEvents.insertOne(
+   {name: "Music Fest",
+   date: new Date(),
+   isFreeEntry: false,
+   ticketPrice: 299.99,
+   "performers":perform,
+   "location":location ,
+   specialCode: null})
+
+var perform1= ["Canvas Crew", "Street Poets"]
+var location1={"city": "Bangalore","venue": "Indira Nagar Art Gallery"}
+var perform2 =["Keynote: Dr. A. Iyer", "Panel: Future Coders"]
+var location2={"city": "Hyderabad","venue": "HITEC Convention Center"}
+
+db.UpcomingEvents.insertMany([
+  {"name": "Art & Soul Expo",
+  "date": new Date(),
+  "isFreeEntry": true,
+  "ticketPrice": 6678.0,
+  "performers":perform1,
+  "location":location1,
+  "specialCode": null},
+  {"name": "Tech Pulse Summit",
+  "date": "2025-11-14",
+  "isFreeEntry": false,
+  "ticketPrice": 499.0,
+  "performers":perform2,
+  "location":location2,
+  "specialCode": null}])
+
+show collections
+db.UpcomingEvents.find()
