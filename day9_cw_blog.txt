@@ -1,0 +1,37 @@
+use blog application
+db.posts.insertMany([
+  {
+    title:"The Alchemist",
+    author:"paulo coelo",
+    tag:["fantasy","classic"],
+    publishedDate:new Date("2025-11-20")
+  },
+  {
+    title: "Pride and Prejudice",
+    author: "Jane Austen",
+    tags:["classic", "romance"],
+    publishedDate: new Date("1813-01-28")
+  },
+  {
+    title: "1984",
+    author: "George Orwell",
+    tags: ["politics","society"],
+    publishedDate: new Date("1949-06-08")
+  },
+  {
+    title: "Moby Dick",
+    author: "Herman Melville",
+    tags: ["adventure""sea"],
+    publishedDate: new Date("1851-10-18")
+  },
+  {
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    tags: ["society","justice"],
+    publishedDate: new Date("1960-07-11")
+  }
+])
+db.posts.createIndex({author: 1})
+db.posts.createIndex({publishedDate:-1})
+db.posts.getIndexes()
+db.posts.dropIndex({author: 1})
