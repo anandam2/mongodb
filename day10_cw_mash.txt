@@ -1,0 +1,7 @@
+use mashupdb
+db.students.createIndex({mark: 1})
+db.students.getIndexes()
+db.students.dropIndex({mark: 1})
+.find({})
+.sort({_id:1})
+.limit(3)

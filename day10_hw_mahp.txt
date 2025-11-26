@@ -1,0 +1,26 @@
+use mashupdb
+db.students.insertMany([
+  { name: "Belly", mark: 55 },
+  { name: "Robert", mark: 79 },
+  { name: "Kylie", mark: 91 },
+  { name: "Taylor", mark: 65 },
+  { name: "Daniel", mark: 53 },
+  { name: "Tessa", mark: 92 },
+  { name: "Kenny", mark: 69 }
+])
+db.getCollection('students')
+  .find({})
+db.getCollection('students')
+  .find({}, { _id: 1, name: 1, mark: 1 })
+db.getCollection('students')
+  .find({})
+  .limit(4)
+db.getCollection('students')
+  .find({})
+  .sort({ _id: 1 })
+  .limit(3)
+db.getCollection('students')
+  .find({})
+  .sort({ _id: 1 })
+  .skip(2)
+  .limit(6)
