@@ -1,0 +1,33 @@
+use blogDB
+db.posts.insertMany([
+  {
+    title: "Introduction to MongoDB",
+    content: "MongoDB is a NoSQL database used for modern apps.",
+    author: "Alice"
+  },
+  {
+    title: "Learning Node.js",
+    content: "Node.js works well with MongoDB.",
+    author: "Bob"
+  },
+  {
+    title: "Web Development Tips",
+    content: "Simple tips to improve your web development skills.",
+    author: "Charlie"
+  }
+])
+
+db.posts.createIndex({
+  title: "text",
+  content: "text"
+})
+
+db.posts.find({
+  $text: { $search: "mongodb" }
+})
+
+db.posts.getIndexes()
+db.posts.dropIndex({
+  title: "text",
+  content: "text"
+})

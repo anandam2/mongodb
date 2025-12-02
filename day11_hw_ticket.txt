@@ -1,0 +1,38 @@
+use supportDB
+
+db.tickets.insertMany([
+  {
+    subject: "Login error",
+    description: "User cannot log in because of an unknown error.",
+    createdAt: new Date()
+  },
+  {
+    subject: "Payment failed",
+    description: "Customer reports payment failed during checkout.",
+    createdAt: new Date()
+  },
+  {
+    subject: "Page not loading",
+    description: "Home page takes too long to load for some users.",
+    createdAt: new Date()
+  }
+])
+
+
+db.tickets.createIndex({
+  subject: "text",
+  description: "text"
+})
+
+
+db.tickets.find({
+  $text: { $search: "error" }
+})
+
+
+db.tickets.getIndexes()
+
+db.tickets.dropIndex({
+  subject: "text",
+  description: "text"
+})
